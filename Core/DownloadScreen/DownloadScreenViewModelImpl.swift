@@ -13,7 +13,7 @@ public class DownloadScreenViewModelImpl {
 
     private let downloader: Downloading
     private let appCoordinator: AppCoordination
-    private let stateSubject = ValueSubject<DownloadScreenState>(.downloadAndOpen)
+    private let stateSubject = ValueSubject<DownloadScreenState>(.lockScreen)
 }
 
 extension DownloadScreenViewModelImpl: DownloadScreenViewModel {
@@ -31,6 +31,14 @@ extension DownloadScreenViewModelImpl: DownloadScreenViewModel {
 
     public func onCancelTapped() {
         downloader.cancel()
+    }
+    
+    public func onUnlockForReward() {
+        stateSubject.value = .downloadAndOpen
+    }
+
+    public func onTryForReward() {
+        tryForReward()
     }
 }
 
@@ -62,5 +70,15 @@ extension DownloadScreenViewModelImpl {
             }
         }()
         stateSubject.value = newState
+    }
+
+    private func tryForReward() {
+        appCoordinator.presentAdShowScreen(
+            rewardCompletion: { [weak self] in
+                guard let self = self else { return }
+
+                self.onUnlockForReward()
+            }
+        )
     }
 }

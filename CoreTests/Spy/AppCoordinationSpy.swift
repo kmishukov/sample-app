@@ -7,10 +7,11 @@
 
 import Core
 
-final class AppCoordinationSpy: AppCoordination {
+final class AppCoordinationSpy: AppCoordination {    
     enum Action: Equatable {
         case switchToSoundScreen
         case switchToMagicColorsScreen
+        case presentAdShowScreen
     }
 
     private(set) var actions = [Action]()
@@ -21,5 +22,9 @@ final class AppCoordinationSpy: AppCoordination {
 
     func switchToMagicColorsScreen() {
         actions.append(.switchToMagicColorsScreen)
+    }
+    
+    func presentAdShowScreen(rewardCompletion: @escaping (() -> Void)) {
+        actions.append(.presentAdShowScreen)
     }
 }

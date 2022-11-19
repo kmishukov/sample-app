@@ -69,6 +69,8 @@
 		7723A717292941C7004D0F46 /* GoodByeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A716292941C7004D0F46 /* GoodByeScreenView.swift */; };
 		7723A719292941DD004D0F46 /* GoodByeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A718292941DD004D0F46 /* GoodByeScreenViewController.swift */; };
 		7723A71B29295D1D004D0F46 /* TabBarDeselectedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A71A29295D1D004D0F46 /* TabBarDeselectedProtocol.swift */; };
+		7723A71D292994AA004D0F46 /* AdsScreenViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A71C292994AA004D0F46 /* AdsScreenViewModelImpl.swift */; };
+		7723A72029299712004D0F46 /* AdsViewModelImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A71F29299712004D0F46 /* AdsViewModelImplTests.swift */; };
 		CE49C39626A81E8300D376EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A14B842672112A001348F1 /* Assets.xcassets */; };
 		CEA3C1F026EF70FB0092F7C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A14B862672112A001348F1 /* LaunchScreen.storyboard */; };
 		CECCC1DA267C72A7000E4D53 /* MainAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CE2A8B26736D2100DA6F29 /* MainAudioUnit.m */; };
@@ -249,6 +251,8 @@
 		7723A716292941C7004D0F46 /* GoodByeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodByeScreenView.swift; sourceTree = "<group>"; };
 		7723A718292941DD004D0F46 /* GoodByeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodByeScreenViewController.swift; sourceTree = "<group>"; };
 		7723A71A29295D1D004D0F46 /* TabBarDeselectedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDeselectedProtocol.swift; sourceTree = "<group>"; };
+		7723A71C292994AA004D0F46 /* AdsScreenViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsScreenViewModelImpl.swift; sourceTree = "<group>"; };
+		7723A71F29299712004D0F46 /* AdsViewModelImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsViewModelImplTests.swift; sourceTree = "<group>"; };
 		790C3543586BBE7C48594D93 /* Pods-Sound-SoundTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sound-SoundTests.release.xcconfig"; path = "Target Support Files/Pods-Sound-SoundTests/Pods-Sound-SoundTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A2B69B5EA6EF55C5AC29858 /* Pods-Sound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sound.debug.xcconfig"; path = "Target Support Files/Pods-Sound/Pods-Sound.debug.xcconfig"; sourceTree = "<group>"; };
 		7BE50C4DAE8B3472415677A1 /* Pods_Sound_SoundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sound_SoundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -553,6 +557,7 @@
 			isa = PBXGroup;
 			children = (
 				57D6C3DD28F8539000D5B2A8 /* Spy */,
+				7723A71E292996B9004D0F46 /* AdsScreenTests */,
 				7723A71229292425004D0F46 /* NotificationAppHideService */,
 				7723A70D29291C07004D0F46 /* GoodByeScreen */,
 				57D6C3DA28F8521200D5B2A8 /* SoundScreen */,
@@ -769,6 +774,14 @@
 			path = GoodByeScreen;
 			sourceTree = "<group>";
 		};
+		7723A71E292996B9004D0F46 /* AdsScreenTests */ = {
+			isa = PBXGroup;
+			children = (
+				7723A71F29299712004D0F46 /* AdsViewModelImplTests.swift */,
+			);
+			path = AdsScreenTests;
+			sourceTree = "<group>";
+		};
 		F55724BA28FFE64A009C41FF /* Download */ = {
 			isa = PBXGroup;
 			children = (
@@ -841,6 +854,7 @@
 			isa = PBXGroup;
 			children = (
 				F55724D729003474009C41FF /* API */,
+				7723A71C292994AA004D0F46 /* AdsScreenViewModelImpl.swift */,
 			);
 			path = AdsScreen;
 			sourceTree = "<group>";
@@ -1290,6 +1304,7 @@
 				7723A70A292912AD004D0F46 /* NotificationAppHideServiceProtocol.swift in Sources */,
 				57D6C3CA28F83F6200D5B2A8 /* SoundInitialization.swift in Sources */,
 				F55724CD2900024C009C41FF /* MagicColorsScreenViewModelImpl.swift in Sources */,
+				7723A71D292994AA004D0F46 /* AdsScreenViewModelImpl.swift in Sources */,
 				7723A7042929061D004D0F46 /* GoodByeScreenViewModel.swift in Sources */,
 				57D6C3CD28F83FE700D5B2A8 /* Service.swift in Sources */,
 				7723A70C292912E7004D0F46 /* NotificationAppHideServiceImp.swift in Sources */,
@@ -1326,6 +1341,7 @@
 				F55724BE28FFE965009C41FF /* AppCoordinationSpy.swift in Sources */,
 				57D6C3DC28F8527D00D5B2A8 /* SoundScreenViewModelImplTests.swift in Sources */,
 				F5BA106D28FEA94100E0739E /* DownloadScreenViewModelImplTests.swift in Sources */,
+				7723A72029299712004D0F46 /* AdsViewModelImplTests.swift in Sources */,
 				F55724D0290020D2009C41FF /* MagicColorsScreenViewModelImplTests.swift in Sources */,
 				576AAA632680AD5300EE77CC /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);

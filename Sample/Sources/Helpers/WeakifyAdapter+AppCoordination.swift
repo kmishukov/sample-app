@@ -15,4 +15,8 @@ extension WeakifyAdapter: AppCoordination where T: AppCoordination {
     func switchToMagicColorsScreen() {
         adaptee?.switchToMagicColorsScreen()
     }
+
+    func presentAdShowScreen(rewardCompletion: @escaping (() -> Void)) {
+        adaptee?.presentAdShowScreen(rewardCompletion: rewardCompletion)
+    }
 }

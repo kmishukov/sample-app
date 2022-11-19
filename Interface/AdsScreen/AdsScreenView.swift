@@ -80,4 +80,17 @@ extension AdsScreenView {
     @objc private func onGetReward() {
         viewModel.onGetRewardTapped()
     }
+    
+    private func renderState(_ state: AdsScreenState) {
+        switch state {
+        case .showAds:
+            closeButton.isHidden = false
+            adLabel.isHidden = false
+            getRewardButton.isHidden = true
+        case .rewardShowingProposal:
+            closeButton.isHidden = true
+            adLabel.isHidden = false
+            getRewardButton.isHidden = false
+        }
+    }
 }

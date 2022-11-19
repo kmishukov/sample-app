@@ -9,6 +9,7 @@ public enum DownloadScreenState {
     case downloadAndOpen
     case downloading
     case retry
+    case lockScreen
 }
 
 public protocol DownloadScreenViewModel {
@@ -17,4 +18,6 @@ public protocol DownloadScreenViewModel {
     func onDownloadAndOpenTapped()
     func onRetryTapped()
     func onCancelTapped()
+    func onUnlockForReward()
+    func onTryForReward()
 }

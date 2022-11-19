@@ -10,7 +10,7 @@ import Core
 
 public class TabBarController: UITabBarController {
     public required init(viewControllers: [UIViewController]) {
-        assert(viewControllers.count == 3)
+        assert(viewControllers.count == 4)
         super.init(nibName: nil, bundle: nil)
         assemble(viewControllers: viewControllers)
     }
@@ -25,7 +25,8 @@ extension TabBarController {
         let titles: [String] = [
             "SOUND",
             "DOWNLOAD",
-            "MAGIC COLORS"
+            "MAGIC COLORS",
+            "GOOD BYE"
         ]
 
         for (index, vc) in viewControllers.enumerated() {
@@ -39,5 +40,17 @@ extension TabBarController {
             $0.tabBar.isTranslucent = false
             $0.tabBar.backgroundColor = .white
         }
+    }
+}
+
+extension TabBarController{
+    public override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem)
+    {
+        guard let viewControllers = viewControllers,
+              viewControllers.count >= selectedIndex,
+              let deselectedViewController = viewControllers[selectedIndex] as? TabBarDeselectedProtocol
+        else { return }
+
+        deselectedViewController.deselectedByUser()
     }
 }

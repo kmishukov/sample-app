@@ -18,7 +18,8 @@ final class MainComposer {
         let tabBarVC = TabBarController(viewControllers: [
             composeSoundScreen(),
             composeDownloadScreen(appCoordinator: weakifyAdapterAppCoordinator),
-            composeMagicColorsScreen()
+            composeMagicColorsScreen(),
+            composeGoodByeScreen(appCoordinator: weakifyAdapterAppCoordinator)
         ])
         let appCoordinator = AppCoordinator(tabBarVC: tabBarVC)
         weakifyAdapterAppCoordinator.adaptee = appCoordinator
@@ -47,5 +48,12 @@ extension MainComposer {
         let viewModel = MagicColorsScreenViewModelImpl()
         let mainView = MagicColorsScreenView(viewModel: viewModel)
         return MagicColorsScreenViewController(mainView: mainView)
+    }
+
+    private func composeGoodByeScreen(appCoordinator: AppCoordination) -> UIViewController {
+        let notificationAppHideService = NotificationAppHideServiceImp()
+        let viewModel = GoodByeViewModelImpl(appCoordinator: appCoordinator, notificationAppHideService: notificationAppHideService)
+        let mainView = GoodByeScreenView(viewModel: viewModel)
+        return GoodByeScreenViewController(mainView: mainView)
     }
 }

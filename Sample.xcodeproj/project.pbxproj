@@ -59,6 +59,16 @@
 		57D6C3E428F8571600D5B2A8 /* SoundScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6C3E328F8571600D5B2A8 /* SoundScreenView.swift */; };
 		57D7EEB926BD68D700D08EAD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7EEB826BD68D700D08EAD /* AppCoordinator.swift */; };
 		7660C03C0B1373AB8E7D9204 /* Pods_Interface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B1BADAB47D315D176CAF92 /* Pods_Interface.framework */; };
+		7723A7042929061D004D0F46 /* GoodByeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A7032929061D004D0F46 /* GoodByeScreenViewModel.swift */; };
+		7723A7062929062F004D0F46 /* GoodByeViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A7052929062F004D0F46 /* GoodByeViewModelImpl.swift */; };
+		7723A70A292912AD004D0F46 /* NotificationAppHideServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A709292912AD004D0F46 /* NotificationAppHideServiceProtocol.swift */; };
+		7723A70C292912E7004D0F46 /* NotificationAppHideServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A70B292912E7004D0F46 /* NotificationAppHideServiceImp.swift */; };
+		7723A70F29291C5B004D0F46 /* GoodByeViewModelImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A70E29291C5B004D0F46 /* GoodByeViewModelImplTests.swift */; };
+		7723A711292922E3004D0F46 /* NotificationAppHideServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A710292922E3004D0F46 /* NotificationAppHideServiceSpy.swift */; };
+		7723A7142929258F004D0F46 /* NotificationAppHideServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A7132929258F004D0F46 /* NotificationAppHideServiceTest.swift */; };
+		7723A717292941C7004D0F46 /* GoodByeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A716292941C7004D0F46 /* GoodByeScreenView.swift */; };
+		7723A719292941DD004D0F46 /* GoodByeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A718292941DD004D0F46 /* GoodByeScreenViewController.swift */; };
+		7723A71B29295D1D004D0F46 /* TabBarDeselectedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723A71A29295D1D004D0F46 /* TabBarDeselectedProtocol.swift */; };
 		CE49C39626A81E8300D376EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A14B842672112A001348F1 /* Assets.xcassets */; };
 		CEA3C1F026EF70FB0092F7C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A14B862672112A001348F1 /* LaunchScreen.storyboard */; };
 		CECCC1DA267C72A7000E4D53 /* MainAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CE2A8B26736D2100DA6F29 /* MainAudioUnit.m */; };
@@ -229,6 +239,16 @@
 		57D7EEB826BD68D700D08EAD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		5C3D642A39B33B1F277281FF /* Pods-Interface.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interface.release.xcconfig"; path = "Target Support Files/Pods-Interface/Pods-Interface.release.xcconfig"; sourceTree = "<group>"; };
 		653E16BB7753F8891D8FAD93 /* Pods-EclipsTests.releasesandbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EclipsTests.releasesandbox.xcconfig"; path = "Target Support Files/Pods-EclipsTests/Pods-EclipsTests.releasesandbox.xcconfig"; sourceTree = "<group>"; };
+		7723A7032929061D004D0F46 /* GoodByeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodByeScreenViewModel.swift; sourceTree = "<group>"; };
+		7723A7052929062F004D0F46 /* GoodByeViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodByeViewModelImpl.swift; sourceTree = "<group>"; };
+		7723A709292912AD004D0F46 /* NotificationAppHideServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAppHideServiceProtocol.swift; sourceTree = "<group>"; };
+		7723A70B292912E7004D0F46 /* NotificationAppHideServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAppHideServiceImp.swift; sourceTree = "<group>"; };
+		7723A70E29291C5B004D0F46 /* GoodByeViewModelImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodByeViewModelImplTests.swift; sourceTree = "<group>"; };
+		7723A710292922E3004D0F46 /* NotificationAppHideServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAppHideServiceSpy.swift; sourceTree = "<group>"; };
+		7723A7132929258F004D0F46 /* NotificationAppHideServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAppHideServiceTest.swift; sourceTree = "<group>"; };
+		7723A716292941C7004D0F46 /* GoodByeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodByeScreenView.swift; sourceTree = "<group>"; };
+		7723A718292941DD004D0F46 /* GoodByeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodByeScreenViewController.swift; sourceTree = "<group>"; };
+		7723A71A29295D1D004D0F46 /* TabBarDeselectedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDeselectedProtocol.swift; sourceTree = "<group>"; };
 		790C3543586BBE7C48594D93 /* Pods-Sound-SoundTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sound-SoundTests.release.xcconfig"; path = "Target Support Files/Pods-Sound-SoundTests/Pods-Sound-SoundTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A2B69B5EA6EF55C5AC29858 /* Pods-Sound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sound.debug.xcconfig"; path = "Target Support Files/Pods-Sound/Pods-Sound.debug.xcconfig"; sourceTree = "<group>"; };
 		7BE50C4DAE8B3472415677A1 /* Pods_Sound_SoundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sound_SoundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -504,6 +524,7 @@
 			isa = PBXGroup;
 			children = (
 				5705242526BAD3F300FD726B /* TabBarController.swift */,
+				7723A71A29295D1D004D0F46 /* TabBarDeselectedProtocol.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -511,6 +532,8 @@
 		57C570582672532F004EE42E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7723A70729291238004D0F46 /* HideNotificationService */,
+				7723A701292905ED004D0F46 /* GoodByeScreen */,
 				57975E36267B88500027BC3C /* Sound */,
 				57D6C3D428F8512B00D5B2A8 /* SoundScreen */,
 				F55724BA28FFE64A009C41FF /* Download */,
@@ -530,6 +553,8 @@
 			isa = PBXGroup;
 			children = (
 				57D6C3DD28F8539000D5B2A8 /* Spy */,
+				7723A71229292425004D0F46 /* NotificationAppHideService */,
+				7723A70D29291C07004D0F46 /* GoodByeScreen */,
 				57D6C3DA28F8521200D5B2A8 /* SoundScreen */,
 				F55724BC28FFE8E4009C41FF /* Download */,
 				F5BA106B28FEA93200E0739E /* DownloadScreen */,
@@ -559,6 +584,7 @@
 		57C570D126725CA3004EE42E /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				7723A715292941AA004D0F46 /* GoodByeScreen */,
 				F55724D1290032C6009C41FF /* AdsScreen */,
 				F55724C328FFF952009C41FF /* MagicColorsScreen */,
 				F5BA106028FE9A0F00E0739E /* DownloadScreen */,
@@ -644,6 +670,7 @@
 				F5BA107B28FEE56E00E0739E /* DelayedActionSpy.swift */,
 				F5BA107D28FEE5A700E0739E /* DownloadingSpy.swift */,
 				F55724BD28FFE965009C41FF /* AppCoordinationSpy.swift */,
+				7723A710292922E3004D0F46 /* NotificationAppHideServiceSpy.swift */,
 			);
 			path = Spy;
 			sourceTree = "<group>";
@@ -681,6 +708,65 @@
 				57520BFE270B027A00261436 /* MainWindow.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		7723A701292905ED004D0F46 /* GoodByeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7723A70229290609004D0F46 /* API */,
+				7723A7052929062F004D0F46 /* GoodByeViewModelImpl.swift */,
+			);
+			path = GoodByeScreen;
+			sourceTree = "<group>";
+		};
+		7723A70229290609004D0F46 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7723A7032929061D004D0F46 /* GoodByeScreenViewModel.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7723A70729291238004D0F46 /* HideNotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				7723A70829291297004D0F46 /* API */,
+				7723A70B292912E7004D0F46 /* NotificationAppHideServiceImp.swift */,
+			);
+			path = HideNotificationService;
+			sourceTree = "<group>";
+		};
+		7723A70829291297004D0F46 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7723A709292912AD004D0F46 /* NotificationAppHideServiceProtocol.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7723A70D29291C07004D0F46 /* GoodByeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7723A70E29291C5B004D0F46 /* GoodByeViewModelImplTests.swift */,
+			);
+			path = GoodByeScreen;
+			sourceTree = "<group>";
+		};
+		7723A71229292425004D0F46 /* NotificationAppHideService */ = {
+			isa = PBXGroup;
+			children = (
+				7723A7132929258F004D0F46 /* NotificationAppHideServiceTest.swift */,
+			);
+			path = NotificationAppHideService;
+			sourceTree = "<group>";
+		};
+		7723A715292941AA004D0F46 /* GoodByeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7723A716292941C7004D0F46 /* GoodByeScreenView.swift */,
+				7723A718292941DD004D0F46 /* GoodByeScreenViewController.swift */,
+			);
+			path = GoodByeScreen;
 			sourceTree = "<group>";
 		};
 		F55724BA28FFE64A009C41FF /* Download */ = {
@@ -1201,9 +1287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7723A70A292912AD004D0F46 /* NotificationAppHideServiceProtocol.swift in Sources */,
 				57D6C3CA28F83F6200D5B2A8 /* SoundInitialization.swift in Sources */,
 				F55724CD2900024C009C41FF /* MagicColorsScreenViewModelImpl.swift in Sources */,
+				7723A7042929061D004D0F46 /* GoodByeScreenViewModel.swift in Sources */,
 				57D6C3CD28F83FE700D5B2A8 /* Service.swift in Sources */,
+				7723A70C292912E7004D0F46 /* NotificationAppHideServiceImp.swift in Sources */,
 				F55724CB29000231009C41FF /* MagicColorsScreenViewModel.swift in Sources */,
 				F5BA106828FE9F5F00E0739E /* DownloadScreenViewModel.swift in Sources */,
 				57D6C3D928F8515500D5B2A8 /* SoundScreenViewModelImpl.swift in Sources */,
@@ -1211,6 +1300,7 @@
 				F55724D92900347D009C41FF /* AdsScreenViewModel.swift in Sources */,
 				F55724DD29012FB9009C41FF /* DelayedAction.swift in Sources */,
 				57D6C3D728F8514C00D5B2A8 /* SoundScreenViewModel.swift in Sources */,
+				7723A7062929062F004D0F46 /* GoodByeViewModelImpl.swift in Sources */,
 				F5BA107628FEC37F00E0739E /* Downloading.swift in Sources */,
 				F5BA106A28FEA07800E0739E /* DownloadScreenViewModelImpl.swift in Sources */,
 				F5BA107828FED49100E0739E /* Downloader.swift in Sources */,
@@ -1226,10 +1316,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5BA107A28FED59900E0739E /* DownloaderTests.swift in Sources */,
+				7723A70F29291C5B004D0F46 /* GoodByeViewModelImplTests.swift in Sources */,
 				F5BA107E28FEE5A700E0739E /* DownloadingSpy.swift in Sources */,
+				7723A711292922E3004D0F46 /* NotificationAppHideServiceSpy.swift in Sources */,
 				571523AD28F81AC1000AA3D8 /* CoreTests.swift in Sources */,
 				F5BA107C28FEE56E00E0739E /* DelayedActionSpy.swift in Sources */,
 				57D6C3DF28F8539800D5B2A8 /* SoundRouterSpy.swift in Sources */,
+				7723A7142929258F004D0F46 /* NotificationAppHideServiceTest.swift in Sources */,
 				F55724BE28FFE965009C41FF /* AppCoordinationSpy.swift in Sources */,
 				57D6C3DC28F8527D00D5B2A8 /* SoundScreenViewModelImplTests.swift in Sources */,
 				F5BA106D28FEA94100E0739E /* DownloadScreenViewModelImplTests.swift in Sources */,
@@ -1247,12 +1340,15 @@
 				F5BA106428FE9C3A00E0739E /* DownloadScreenViewController.swift in Sources */,
 				F55724C729000192009C41FF /* MagicColorsScreenViewController.swift in Sources */,
 				57D6C3C828F83F2B00D5B2A8 /* AudioSession.swift in Sources */,
+				7723A717292941C7004D0F46 /* GoodByeScreenView.swift in Sources */,
 				F5009CA9267D3DD500654D0D /* Bundle+interface.swift in Sources */,
 				57D7EEB926BD68D700D08EAD /* AppCoordinator.swift in Sources */,
 				F55724C528FFF96E009C41FF /* MagicColorsScreenView.swift in Sources */,
 				570538202680A043006396AA /* UIView+addSubviews.swift in Sources */,
 				F5BA106228FE9A2800E0739E /* DownloadScreenView.swift in Sources */,
 				57D6C3E228F856B000D5B2A8 /* SoundScreenViewController.swift in Sources */,
+				7723A719292941DD004D0F46 /* GoodByeScreenViewController.swift in Sources */,
+				7723A71B29295D1D004D0F46 /* TabBarDeselectedProtocol.swift in Sources */,
 				F55724DB29003637009C41FF /* AdsScreenViewController.swift in Sources */,
 				57D6C3E428F8571600D5B2A8 /* SoundScreenView.swift in Sources */,
 				F55724D3290032D7009C41FF /* AdsScreenView.swift in Sources */,

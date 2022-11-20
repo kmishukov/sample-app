@@ -9,6 +9,7 @@ public enum MagicColorsMode: Equatable {
     case base
     case color
     case tutorial(message: String)
+    case challenge
 }
 
 public protocol MagicColorsScreenViewModel {
@@ -17,4 +18,5 @@ public protocol MagicColorsScreenViewModel {
     func onTutorialTapped()
     func onResetBGColorTapped()
     func onChangeBGColorTapped()
+    func onChallengeTapped()
 }

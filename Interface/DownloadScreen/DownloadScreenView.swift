@@ -22,6 +22,7 @@ public class DownloadScreenView: UIView {
     }
 
     private let viewModel: DownloadScreenViewModel
+    private let tryForRewardButton = UIButton()
     private let downloadAndOpenButton = UIButton()
     private let cancelWaitingButton = UIButton()
     private let retryButton = UIButton()
@@ -36,6 +37,10 @@ extension DownloadScreenView {
         downloadAndOpenButton.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.size.equalTo(CGSize.init(width: 200, height: 50))
+        }
+        
+        tryForRewardButton.snp.makeConstraints {
+            $0.edges.equalTo(downloadAndOpenButton)
         }
 
         waitingOverlayView.snp.makeConstraints {
@@ -63,7 +68,13 @@ extension DownloadScreenView {
             $0.setTitle("Download & Open", for: .normal)
             $0.addTarget(self, action: #selector(onDownloadAndOpen), for: .touchUpInside)
         }
-
+        
+        with(tryForRewardButton) {
+            $0.backgroundColor = .darkGray
+            $0.setTitle("Show for reward", for: .normal)
+            $0.addTarget(self, action: #selector(onTryForRewardButton), for: .touchUpInside)
+        }
+        
         with(waitingOverlayView) {
             $0.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         }
@@ -86,6 +97,7 @@ extension DownloadScreenView {
         )
 
         addSubviews(
+            tryForRewardButton,
             downloadAndOpenButton,
             waitingOverlayView
         )
@@ -103,10 +115,11 @@ extension DownloadScreenView {
     }
 
     private func renderState(_ state: DownloadScreenState) {
+        tryForRewardButton.isHidden = state != .lockScreen
         downloadAndOpenButton.isHidden = state != .downloadAndOpen
         retryButton.isHidden = state != .retry
         cancelWaitingButton.isHidden = state != .downloading
-        waitingOverlayView.isHidden = state == .downloadAndOpen
+        waitingOverlayView.isHidden = state == .downloadAndOpen || state == .lockScreen
     }
 
     @objc private func onDownloadAndOpen() {
@@ -119,5 +132,9 @@ extension DownloadScreenView {
 
     @objc private func onCancel() {
         viewModel.onCancelTapped()
+    }
+
+    @objc private func onTryForRewardButton() {
+        viewModel.onTryForReward()
     }
 }

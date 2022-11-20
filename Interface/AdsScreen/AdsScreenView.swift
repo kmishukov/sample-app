@@ -6,6 +6,7 @@
 //
 
 import Core
+import Combine
 
 public class AdsScreenView: UIView {
     public init(viewModel: AdsScreenViewModel) {
@@ -22,6 +23,7 @@ public class AdsScreenView: UIView {
     private let closeButton = UIButton()
     private let getRewardButton = UIButton()
     private let adLabel = UILabel()
+    private var subscription: Cancellable?
 }
 
 extension AdsScreenView {
@@ -44,6 +46,10 @@ extension AdsScreenView {
             $0.edges.equalToSuperview()
         }
     }
+
+    public func viewDidLoad() {
+        viewModel.onModuleActivated()
+    }
 }
 
 extension AdsScreenView {
@@ -64,11 +70,17 @@ extension AdsScreenView {
             $0.textAlignment = .center
         }
 
+        with(self) {
+            $0.backgroundColor = .black
+        }
+
         addSubviews(
             adLabel,
             closeButton,
             getRewardButton
         )
+        
+        subscribe()
 
         setNeedsUpdateConstraints()
     }
@@ -79,5 +91,31 @@ extension AdsScreenView {
 
     @objc private func onGetReward() {
         viewModel.onGetRewardTapped()
+    }
+    
+    private func subscribe() {
+        subscription = viewModel.state
+            .removeDuplicates()
+            .sink { [weak self] in
+                self?.renderState($0)
+            }
+    }
+
+    private func renderState(_ state: AdsScreenState) {
+        switch state {
+        case .initState:
+            closeButton.isHidden = true
+            adLabel.isHidden = true
+            getRewardButton.isHidden = true
+        case .showAds:
+            closeButton.isHidden = false
+            adLabel.isHidden = false
+            getRewardButton.isHidden = true
+        case .showReward:
+            adLabel.text = "Great! Now get you reward"
+            closeButton.isHidden = true
+            adLabel.isHidden = false
+            getRewardButton.isHidden = false
+        }
     }
 }

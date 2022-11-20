@@ -12,15 +12,31 @@ class DownloadScreenViewModelImplTests: XCTestCase {
     func test_state_afterInit() {
         let sut = makeSUT()
 
-        XCTAssertEqual(sut.viewModel.state.value, .downloadAndOpen)
+        XCTAssertEqual(sut.viewModel.state.value, .lockScreen)
     }
 
+    func test_onUnlockForReward() {
+        let sut = makeSUT()
+
+        sut.viewModel.onUnlockForReward()
+
+        XCTAssertEqual(sut.viewModel.state.value, .downloadAndOpen)
+    }
+    
     func test_state_onDownloadAndOpenTapped() {
         let sut = makeSUT()
 
         sut.viewModel.onDownloadAndOpenTapped()
 
         XCTAssertEqual(sut.viewModel.state.value, .downloading)
+    }
+    
+    func test_state_onTryForReward() {
+        let sut = makeSUT()
+
+        sut.viewModel.onTryForReward()
+
+        XCTAssertEqual(sut.appCoordinationSpy.actions, [.presentAdShowScreen])
     }
 
     func test_startsDownload_onDownloadAndOpenTapped() {

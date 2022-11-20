@@ -137,4 +137,3 @@ extension GoodByeViewModelImplTests {
         return (viewModel, appCoordinationSpy, notificationAppHideServiceSpy)
     }
 }
-

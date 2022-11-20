@@ -10,4 +10,5 @@ import Foundation
 public protocol AppCoordination {
     func switchToSoundScreen()
     func switchToMagicColorsScreen()
+    func presentAdShowScreen(rewardCompletion: @escaping (() -> Void))
 }

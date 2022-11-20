@@ -6,8 +6,9 @@
 //
 
 public enum AdsScreenState {
+    case initState
     case showAds
-    case rewardShowingProposal
+    case showReward
 }
 
 public protocol AdsScreenViewModel {
@@ -15,5 +16,5 @@ public protocol AdsScreenViewModel {
 
     func onCloseTapped()
     func onGetRewardTapped()
-    func activateReward()
+    func onModuleActivated()
 }

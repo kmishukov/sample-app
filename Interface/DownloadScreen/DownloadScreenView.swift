@@ -70,8 +70,8 @@ extension DownloadScreenView {
         }
         
         with(tryForRewardButton) {
-            $0.backgroundColor = .black
-            $0.setTitle("Download & Open", for: .normal)
+            $0.backgroundColor = .darkGray
+            $0.setTitle("Show for reward", for: .normal)
             $0.addTarget(self, action: #selector(onTryForRewardButton), for: .touchUpInside)
         }
         

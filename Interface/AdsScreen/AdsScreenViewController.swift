@@ -24,4 +24,9 @@ extension AdsScreenViewController {
     public override func loadView() {
         view = mainView
     }
+
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        mainView.viewDidLoad()
+    }
 }

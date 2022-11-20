@@ -33,21 +33,13 @@ extension AppCoordinator: AppCoordination {
 
 extension AppCoordinator {
     private func composeAdsViewController(rewardCompletion: @escaping (() -> Void)) -> UIViewController {
-        // TODO: СДЕЛАТЬ
-        // TODO: СДЕЛАТЬ
-        // TODO: СДЕЛАТЬ
-        // TODO: СДЕЛАТЬ
-        // TODO: СДЕЛАТЬ
-        // TODO: СДЕЛАТЬ
-        /*let viewModel = GoodByeViewModelImpl(appCoordinator: appCoordinator, notificationAppHideService: notificationAppHideService)
-        let mainView = GoodByeScreenView(viewModel: viewModel)
-        return GoodByeScreenViewController(mainView: mainView)*/
-        
-        /*let viewModel = AdsScreenViewModelImp()
+        let viewModel = AdsScreenViewModelImpl(rewardCompletion: rewardCompletion, closeCompletion: nil)
         let mainView = AdsScreenView(viewModel: viewModel)
-        return AdsScreenViewController(mainView: mainView)*/
-        let vc = UIViewController()
-        vc.view.backgroundColor = .red
-        return vc
+        let viewController = AdsScreenViewController(mainView: mainView)
+        viewModel.setCloseCompletion { [weak viewController] in
+            guard let viewController = viewController else { return }
+            viewController.dismiss(animated: true)
+        }
+        return viewController
     }
 }

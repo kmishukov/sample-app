@@ -9,6 +9,7 @@
 #define player_h
 
 typedef struct _player {
+    int isFadeOut;
     int position;
     float volume;
 } t_player;

@@ -76,6 +76,34 @@ class MagicColorsScreenViewModelImplTests: XCTestCase {
 
         XCTAssertEqual(sut.mode.value, .color)
     }
+    
+    func test_mode_onChallengeTapped() {
+        let sut = makeSUT()
+
+        sut.onChallengeTapped()
+
+        XCTAssertEqual(sut.mode.value, .challenge)
+    }
+
+    func test_mode_onChallengeTapped_after_challenge() {
+        let sut = makeSUT()
+        let expectation = self.expectation(description: "Challenge end")
+
+        sut.onChallengeTapped()
+        XCTAssertEqual(sut.mode.value, .challenge)
+        
+        let subscription = sut.mode
+            .filter { $0 == .base }
+            .sink(
+                receiveValue: { _ in
+                    expectation.fulfill()
+                }
+            )
+    
+        let result = XCTWaiter.wait(for: [expectation], timeout: 1)
+        XCTAssertEqual(sut.mode.value, .base)
+        XCTAssertEqual(result, .completed)
+    }
 }
 
 extension MagicColorsScreenViewModelImplTests {

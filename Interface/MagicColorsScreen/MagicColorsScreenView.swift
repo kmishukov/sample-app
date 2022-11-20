@@ -26,6 +26,8 @@ public class MagicColorsScreenView: UIView {
     private let resetBGColorButton = UIButton()
     private let tutorialButton = UIButton()
     private let tutorialLabel = UILabel()
+    private let challengeButton = UIButton()
+    private let challengeLabel = UILabel()
     private var subscription: Cancellable?
 }
 
@@ -37,6 +39,12 @@ extension MagicColorsScreenView {
             $0.size.equalTo(CGSize(width: 200, height: 50))
             $0.top.equalTo(self.snp.topMargin)
             $0.right.equalToSuperview()
+        }
+
+        challengeButton.snp.makeConstraints {
+            $0.size.equalTo(CGSize(width: 200, height: 50))
+            $0.top.equalTo(self.snp.topMargin)
+            $0.left.equalToSuperview()
         }
 
         tutorialLabel.snp.makeConstraints {
@@ -86,6 +94,17 @@ extension MagicColorsScreenView {
             $0.addTarget(self, action: #selector(onTutorial), for: .touchUpInside)
         }
         
+        with(challengeButton) {
+            $0.setTitle("Challange", for: .normal)
+            $0.backgroundColor = .green
+            $0.addTarget(self, action: #selector(onChallengeTapped), for: .touchUpInside)
+        }
+        
+        with(challengeLabel) {
+            $0.text = "This is challenge text"
+            $0.textColor = .white
+        }
+
         with(tutorialLabel) {
             $0.textAlignment = .center
             $0.numberOfLines = 0
@@ -107,7 +126,9 @@ extension MagicColorsScreenView {
             changeBGColorButton,
             resetBGColorButton,
             tutorialButton,
-            tutorialLabel
+            tutorialLabel,
+            challengeButton,
+            challengeLabel
         )
 
         subscribe()
@@ -129,18 +150,36 @@ extension MagicColorsScreenView {
             tutorialLabel.text = nil
             changeBGColorButton.isHidden = false
             resetBGColorButton.isHidden = true
+            tutorialButton.isHidden = false
+            challengeButton.isHidden = false
+            hiddenLabel.isHidden = false
         case .color:
             backgroundColor = changeBGColorButton.backgroundColor
             changeBGColorButton.isHidden = true
             resetBGColorButton.isHidden = false
             tutorialLabel.text = nil
+            hiddenLabel.isHidden = false
         case .tutorial(let message):
             tutorialLabel.text = message
+            hiddenLabel.isHidden = false
+        case .challenge:
+            backgroundColor = changeBGColorButton.backgroundColor
+            changeBGColorButton.isHidden = true
+            resetBGColorButton.isHidden = true
+            tutorialButton.isHidden = true
+            challengeButton.isHidden = true
+            tutorialLabel.text = nil
+            hiddenLabel.isHidden = true
+            randPositionChallengeText()
         }
     }
 
     @objc private func onTutorial() {
         viewModel.onTutorialTapped()
+    }
+    
+    @objc private func onChallengeTapped() {
+        viewModel.onChallengeTapped()
     }
 
     @objc private func onResetBGColor() {
@@ -149,5 +188,26 @@ extension MagicColorsScreenView {
 
     @objc private func onChangeBGColor() {
         viewModel.onChangeBGColorTapped()
+    }
+}
+
+extension MagicColorsScreenView {
+    private func randPositionChallengeText() {
+        let randomXPosition: CGFloat
+        let randomYPosition: CGFloat
+
+        if Int.random(in: 0..<100) > 50 {
+            randomXPosition = CGFloat.random(in: 0..<self.frame.width - challengeLabel.frame.width)
+            randomYPosition = CGFloat.random(in: challengeButton.frame.maxY..<hiddenLabel.frame.minY - challengeLabel.frame.height)
+        } else {
+            randomXPosition = CGFloat.random(in: 0..<self.frame.width - challengeLabel.frame.width)
+            randomYPosition = CGFloat.random(in: willHideLabel.frame.maxY..<self.frame.height - challengeLabel.frame.height)
+        }
+        challengeLabel.frame = CGRect(
+            x: randomXPosition,
+            y: randomYPosition,
+            width: challengeLabel.frame.width,
+            height: challengeLabel.frame.height
+        )
     }
 }

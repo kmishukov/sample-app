@@ -36,7 +36,7 @@ void player_process_audio(t_player *x, int blocks, float *buffer) {
         }
 
         *buffer_pointer++ = frame;
-        *buffer_pointer++ = frame;
+        *buffer_pointer++ = frame / 2;
     }
 }
 
